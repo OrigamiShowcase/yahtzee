@@ -8,7 +8,7 @@ export enum ExportType
     Number6=6,
     ThreeOfAKind=7,
     FourOfAKind=8,
-    FuulHouse=9,
+    FullHouse=9,
     SmallStraight=10,
     LargeStraight=11,
     Yahtzee=12,
