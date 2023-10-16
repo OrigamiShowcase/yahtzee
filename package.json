@@ -1,0 +1,18 @@
+{
+    "scripts": {
+        "build": "npx tsc",
+        "start": "node ./dist/Index.js"
+    },
+    "dependencies": {
+        "@origamicore/base": "^0.1.0",
+        "@origamicore/core": "^4.1.5",
+        "@origamicore/google-auth": "^0.1.2",
+        "@origamicore/endpoint": "^1.0.8",
+        "@origamicore/mongo": "^1.0.0",
+        "@origamicore/redis": "^1.0.0",
+        "@types/node": "^20.4.3",
+        "dotenv": "^16.3.1",
+        "typescript": "^4.7.3"
+    },
+    "name": "yahtzee"
+}
