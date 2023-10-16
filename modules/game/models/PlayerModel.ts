@@ -4,8 +4,11 @@ export default class PlayerModel
 {
     scores:ScoreModel[]=[];
     userid:string;
+    email:string
     constructor(data:{
-        scores:ScoreModel[]
+        scores?:ScoreModel[]
+        userid:string;
+        email:string
     })
     {
         Object.assign(this,data);

@@ -73,7 +73,8 @@ export default class AuthService implements PackageIndex
         }
         return new RouteResponse({
             session:new SessionModel({
-                userid:profile._id
+                userid:profile._id,
+                email:gprofile.email
             })
         })
     }
