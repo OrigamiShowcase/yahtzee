@@ -57,9 +57,10 @@ export default class GameManager
             let lock=game.locks.indexOf(i);
             if(lock==-1)
             {
-                game.dices.push(CommonService.random(1,6)) 
+                game.dices[i] =CommonService.random(1,6)
             }
         }
+        game.count++
         this.saveGame(game);
         game.sendMessage(ResponseType.Rool)
     }
@@ -187,6 +188,9 @@ export default class GameManager
             },1000*60)
         }
         game.turn++;
+        game.count=0;
+        game.dices=[]
+        game.locks=[]
         if(game.turn>=game.players.length)game.turn=0;
         this.saveGame(game);
         game.sendMessage(ResponseType.Rool)

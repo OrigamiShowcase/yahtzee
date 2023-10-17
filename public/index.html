@@ -1,0 +1,527 @@
+<html>
+    <body>
+
+        
+        <div id="logindiv">
+            <button onclick="login()">
+                Login By Google
+            </button>
+        </div>
+
+        <div id="gamediv">
+            <div id="creatediv">
+                <input id="codeinput"/>
+                <button onclick="joinGame()" >Join</button>
+
+                <button onclick="createGame()" >Create</button>
+
+            </div> 
+
+
+            
+            <div id="playdiv">
+                <div id="playerdiv">
+
+                </div>
+
+                <div>  
+                    <button onclick="startGame()" class="rool-btn" id="btstart"  >Start</button> 
+                </div></br>
+                <div>
+                    <button id="dicebtn0" onclick="selectDice(0)" class="btn" ></button>
+                    <button id="dicebtnl0" onclick="selectDice(0)" class="lock-btn" ></button>
+                    <button id="dicebtn1" onclick="selectDice(1)" class="btn" ></button>
+                    <button id="dicebtnl1" onclick="selectDice(1)" class="lock-btn" ></button>
+                    <button id="dicebtn2" onclick="selectDice(2)" class="btn" ></button>
+                    <button id="dicebtnl2" onclick="selectDice(2)" class="lock-btn" ></button>
+                    <button id="dicebtn3" onclick="selectDice(3)" class="btn" ></button>
+                    <button id="dicebtnl3" onclick="selectDice(3)" class="lock-btn" ></button>
+                    <button id="dicebtn4" onclick="selectDice(4)" class="btn" ></button>
+
+                    <button id="dicebtnl4" onclick="selectDice(4)" class="lock-btn" ></button>
+                </div>
+                <div> 
+                    <button onclick="rool()" class="rool-btn"  id="btrool" >Rool</button> 
+                </div>
+        
+                <div class="scores-div">
+                    Number 1 : <span id="type1" class="n-span" ></span>   <span id="htype1" class="h-span"></span> <button onclick="select(1)" id="bttype1" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Number 2 : <span id="type2" class="n-span" ></span>   <span id="htype2" class="h-span"></span> <button onclick="select(2)" id="bttype2" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Number 3 : <span id="type3" class="n-span" ></span>   <span id="htype3" class="h-span"></span> <button onclick="select(3)" id="bttype3" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Number 4 : <span id="type4" class="n-span" ></span>   <span id="htype4" class="h-span"></span> <button onclick="select(4)" id="bttype4" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Number 5 : <span id="type5" class="n-span" ></span>   <span id="htype5" class="h-span"></span> <button onclick="select(5)" id="bttype5" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Number 6 : <span id="type6" class="n-span" ></span>   <span id="htype6" class="h-span"></span> <button onclick="select(6)" id="bttype6" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Three Of A Kind : <span id="type7" class="n-span" ></span>   <span id="htype7" class="h-span"></span> <button onclick="select(7)" id="bttype7" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Four Of A Kind : <span id="type8" class="n-span" ></span>   <span id="htype8" class="h-span"></span> <button onclick="select(8)" id="bttype8" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Full House : <span id="type9" class="n-span" ></span>   <span id="htype9" class="h-span"></span> <button onclick="select(9)" id="bttype9" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Small Straight : <span id="type10" class="n-span" ></span>   <span id="htype10" class="h-span"></span> <button onclick="select(10)" id="bttype10" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Large Straight : <span id="type11" class="n-span" ></span>   <span id="htype11" class="h-span"></span> <button onclick="select(11)" id="bttype11" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Yahtzee : <span id="type12" class="n-span" ></span>   <span id="htype12" class="h-span"></span> <button onclick="select(12)" id="bttype12" class="select-score"  >Select</button>
+                </div>
+                <div class="scores-div">
+                    Chance : <span id="type13" class="n-span" ></span>   <span id="htype13" class="h-span"></span> <button onclick="select(13)" id="bttype13" class="select-score"  >Select</button>
+                </div>
+
+
+                
+                <div class="scores-div">
+                    Sum : <span id="sum" class="n-span" ></span>  
+                </div>
+            </div>  
+
+        </div>
+
+        
+        <style>
+            .h-span
+            {
+                font-size: 25px;
+                color: darkgray;
+            }
+            .n-span
+            {
+                font-size: 25px; 
+            }
+            .btn
+            {
+                width: 50px;
+                height: 50px;
+            }
+            .lock-btn
+            {
+                background-color: yellow;
+                width: 50px;
+                height: 50px;
+            }
+            .rool-btn
+            {
+                width: 250px;
+                height: 50px;
+            }
+            .scores-div
+            {
+                margin: 10px;
+            }
+            .select-score
+            {
+                height: 25px;
+            }
+            .player-select
+            {
+                background-color: cornflowerblue;
+            }
+            .player-bix 
+            {
+                border-style: solid;
+                width: 350px;
+            }
+        </style>
+        <script>
+            
+           // var baseUrl='wss://yahtzee.origamicore.com';
+             var baseUrl='ws://localhost:4001';
+            function showElement(name)
+            {
+                document.getElementById(name).style.display=''
+            }
+            function hideElement(name)
+            {
+                document.getElementById(name).style.display='none'
+            }
+
+
+            
+            function callApi(url ) {
+                return new Promise((res,rej)=>{
+                    const xhttp = new XMLHttpRequest();
+                    xhttp.onload = function() { 
+                        if(this.status==403)
+                        {
+                            rej(this.responseText)
+                        }
+                        if(this.responseText)
+                        {
+                            var resp=JSON.parse(this.responseText) 
+                            if(resp.token)
+                            {
+                                window.localStorage.setItem('token',resp.token)
+                            }
+                            res( resp.data);
+    
+                        } 
+                    }
+                    xhttp.open("GET",url);
+                    if(window.localStorage.token)
+                        xhttp.setRequestHeader('authorization',window.localStorage.token)
+                    xhttp.send();
+
+                })
+            }
+        </script>
+        <script>
+            let locks=[false,false,false,false,false,]
+            let dices=[0,0,0,0,0,]
+            let game;
+
+            function reloadElements()
+            {
+                
+                if(window.localStorage.token)
+                {
+                    showElement('gamediv')
+                    hideElement('logindiv')  
+                    if(!game)
+                    {
+                        showElement('creatediv')
+                        hideElement('playdiv')
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    showElement('logindiv')
+                    hideElement('gamediv') 
+                }
+            }
+
+            reloadElements()
+        </script>
+
+        <script>
+            
+            function reloadGame(newModel)
+            {
+                console.log(newModel);
+                if(!newModel)
+                {
+                    game=newModel
+                    return
+                }
+                if(newModel )
+                {
+                    hideElement('creatediv')
+                    showElement('playdiv')
+                    let str= 'Game ID : '+newModel._id+ '<br/><br/> '
+                    for(let i=0;i< newModel.players.length;i++)
+                    {
+                        let player=newModel.players[i]
+                        if(newModel.turn==i)
+                        {
+                            str+='<div class="player-bix player-select"> '+player.email+'(turn)'
+                        }
+                        else
+                        {
+                            str+='<div class="player-bix">'+player.email
+                        }
+                        if(player.winIndex)
+                        {
+                            str+= JSON.stringify(player.winIndex) 
+                        }
+                        str+= ' </div>'
+                    } 
+                    str+= ' <br/> '
+                    document.getElementById('playerdiv').innerHTML=str;
+                }
+                game=newModel;
+                if(game)
+                {
+                    hideElement('btrool')
+                    hideElement('btstart')
+                    if(game.state==5)
+                    {
+
+                    }
+                    else if(game.state!=2)
+                    { 
+                        showElement('btstart') 
+                    }
+                    else
+                    { 
+                        showElement('btrool') 
+                    }
+                    let exist={} 
+                    let sum=0;
+                    for(let i=0;i<5;i++)
+                    {
+                        hideElement('dicebtn'+i)
+                        hideElement('dicebtnl'+i)
+
+                    }
+                    for(let i=0;i<game.dices.length;i++)
+                    {
+                        let dice=game.dices[i]
+                        document.getElementById('dicebtn'+i).innerHTML=dice;
+                        document.getElementById('dicebtnl'+i).innerHTML=dice;
+                        if(game.locks.indexOf(i)>-1)
+                        {
+                            showElement('dicebtnl'+i)
+                            hideElement('dicebtn'+i)
+                        }
+                        else
+                        {
+                            showElement('dicebtn'+i)
+                            hideElement('dicebtnl'+i) 
+                        }
+                        if(!exist[dice]) exist[dice]=0
+                        exist[dice]++
+                        sum+=dice
+                    }
+                    let sumScore=0;
+                    for(let i=1;i<14;i++)
+                    {
+                        document.getElementById('htype'+i).innerHTML='0'
+                    }
+                    document.getElementById('htype1').innerHTML=exist[1]?exist[1]*1:0
+                    document.getElementById('htype2').innerHTML=exist[2]?exist[2]*2:0
+                    document.getElementById('htype3').innerHTML=exist[3]?exist[3]*3:0
+                    document.getElementById('htype4').innerHTML=exist[4]?exist[4]*4:0
+                    document.getElementById('htype5').innerHTML=exist[5]?exist[5]*5:0
+                    document.getElementById('htype6').innerHTML=exist[6]?exist[6]*6:0
+                    if(Object.keys(exist).length==5 && (exist[2] &&exist[3] &&exist[4] &&exist[5] ))
+                    {
+                        document.getElementById('htype11').innerHTML=40
+                    }
+                    if((exist[1] &&exist[2] &&exist[3] &&exist[4] )  || (exist[2] &&exist[3] &&exist[4] &&exist[5] )|| (exist[3] &&exist[4] &&exist[5] &&exist[6] ))
+                    {
+                        document.getElementById('htype10').innerHTML=30
+                    }
+                    if(Object.keys(exist).length==1)
+                    {
+                        document.getElementById('htype12').innerHTML=50
+                    }
+                    if(Object.keys(exist).length==2)
+                    {
+                        document.getElementById('htype9').innerHTML=sum
+                    }
+                    for(let num in exist)
+                    {
+                        if(exist[num]>=3)
+                        {
+                            document.getElementById('htype7').innerHTML=sum
+                        }
+                    }
+                    for(let num in exist)
+                    {
+                        if(exist[num]>=4)
+                        {
+                            document.getElementById('htype8').innerHTML=sum
+                        }
+                    }
+                    document.getElementById('htype13').innerHTML=sum
+                    console.log('>>',exist );
+
+                    let player=game.players[game.turn];
+                    let scores=player.scores;
+                    for(let s of scores)
+                    {
+                        sumScore+=s.value
+                        document.getElementById('type'+s.type).innerHTML=s.value
+                        hideElement('htype'+s.type)
+                        hideElement('bttype'+s.type)
+                         
+                    }
+                    document.getElementById('sum').innerHTML=sumScore
+                    document.getElementById('btrool').innerHTML='Rool ('+(3-game.count)+')'
+                    
+                }
+            }
+            function getQueryParams(url) {
+                const paramArr = url.slice(url.indexOf('?') + 1).split('&');
+                const params = {};
+                paramArr.map(param => {
+                    const [key, val] = param.split('=');
+                    params[key] = decodeURIComponent(val);
+                })
+                return params;
+            }
+            async function loginWithOauth()
+            {
+                let tokenData= await callApi('/auth/login?id='+queryParams.oauttoken); 
+                window.location.href='/'
+            }
+            let queryParams=getQueryParams(window.location.href)
+            if(queryParams && queryParams.oauttoken)
+            {
+                loginWithOauth()
+            }
+            async function login()
+            {
+                let url = await callApi('/goauth/getOauthUrl')   
+                window.open(url)
+            }
+            async function loadProfile()
+            {
+                
+                profile= await callApi('/auth/isLogin') 
+                console.log('>>>>>>>>>>',profile);
+                reloadElements()
+            } 
+            loadProfile()
+
+        </script>
+        <script>
+            
+            var name;
+            var id=2;
+            var token=window.localStorage.token;
+            if(token)
+            {
+                const client = new WebSocket(baseUrl, 'echo-protocol');
+                var temp={};
+                function callApiSocket(domain,service,param,callBack) {
+                    id++;
+                    if(callBack)
+                    {
+                        temp[id.toString()]={callBack}
+                        client.send(JSON.stringify({domain,service,param,id,token})); 
+                    }
+                    else
+                    {
+                        return new Promise((res,rej)=>{
+                            temp[id.toString()]={res,rej}
+                            client.send(JSON.stringify({domain,service,param,id,token})); 
+                        })                    
+                    }
+                } 
+                async function connectToServer()
+                {
+                    let newModel= await callApiSocket('game','getGame',{}) 
+                    reloadGame(newModel)
+                    reloadElements()
+                    if(!game)
+                    { 
+                    }
+                    else
+                    { 
+                        callApiSocket('game','listen',{},(data)=>{
+                            let dt=data.data.response.data
+                            if(dt)
+                            {
+                                console.log('event:',dt.game); 
+                                reloadGame(dt.game) 
+
+                            }
+                        })
+                    }
+                }
+                client.addEventListener('open', async function (event) { 
+                    await connectToServer()
+                });
+                client.addEventListener('message', function (event) {
+                    var data=JSON.parse(event.data) ; 
+                    var id=data.id.toString();
+                    if(data.session?.token)
+                    {
+                        token=data.session?.token;
+                    }
+                    if(temp[id])
+                    {
+                        if(temp[id].callBack)
+                        {
+                            temp[id].callBack(data)
+                        }
+                        else
+                        {
+                            if(data.error)temp[id].rej(data.error)
+                            else temp[id].res(data.data.response.data)
+                        }
+                    } 
+                });
+                var joinGame= async function ()
+                {
+                    let newModel= await callApiSocket('game','join',{id:document.getElementById('codeinput').value})
+                    reloadGame(newModel) 
+                    reloadElements()
+                    callApiSocket('game','listen',{},(data)=>{
+                        let dt=data.data.response.data
+                        console.log('event:',dt.game);
+                        reloadGame(dt.game) 
+                    })
+                }
+                var createGame= async function ()
+                { 
+                    let newModel= await callApiSocket('game','createGame',{})
+                    if(newModel)
+                    {
+                        reloadGame(newModel) 
+                        reloadElements()
+                        callApiSocket('game','listen',{},(data)=>{
+                            let dt=data.data.response.data
+                            console.log('event:',dt.game);
+                            reloadGame(dt.game) 
+                        })
+                    }
+
+                }
+                var rool=async function()
+                {
+                    let newModel= await callApiSocket('game','rool',{  })
+                    
+                }
+                var lock=async function(index)
+                {
+                    let newModel= await callApiSocket('game','lock',{index})
+                    
+                }
+                var unlock=async function(index)
+                {
+                    let newModel= await callApiSocket('game','unlock',{index})
+                    
+                }
+                var selectDice=async function(index)
+                { 
+                    if(game.locks.indexOf(index)>-1)
+                    {
+                        unlock(index)
+                    }
+                    else
+                    {
+                        lock(index)
+                    }
+                }
+                var select=async function(type)
+                {
+                    let newModel= await callApiSocket('game','setScore',{ type })  
+                    
+                } 
+                var startGame= async function ()
+                { 
+                    let newModel= await callApiSocket('game','startGame',{id:game._id })
+                    if(newModel)
+                    {
+                        reloadGame(newModel) 
+                        reloadElements()
+                        callApiSocket('game','listen',{},(data)=>{
+                            console.log('event:',data);
+                        })
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
