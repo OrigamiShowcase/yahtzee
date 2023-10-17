@@ -43,7 +43,7 @@ export default new ConfigModel({
                   new EndpointConnection({
                       //debug:true,
                       protocol:new ConnectionProtocol({
-                          port:4000,
+                          port:EnvModel.httpPort,
                           type:'http',
                           jwtConfig:new JwtConfig({
                                algorithm:'RS256',
@@ -58,7 +58,7 @@ export default new ConfigModel({
                   }),
                   new EndpointConnection({ 
                       protocol:new ConnectionProtocol({
-                          port:4001,
+                          port:EnvModel.socketPort,
                           type:'http',
                           jwtConfig:new JwtConfig({
                                algorithm:'RS256',
