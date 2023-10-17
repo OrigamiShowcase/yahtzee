@@ -127,7 +127,8 @@ export default class GameManager
         }
         if(type==ExportType.FullHouse)
         {
-            if(Object.keys(tmp).length==2)
+            let keys=Object.keys(tmp)
+            if(keys.length==2 && (tmp[keys[0]]==2 || tmp[keys[0]]==3))
             {
                 value=sum;
             }

@@ -314,8 +314,10 @@
                     {
                         document.getElementById('htype12').innerHTML=50
                     }
-                    if(Object.keys(exist).length==2)
+                    let keys=Object.keys(exist) 
+                    if(keys.length==2 && (exist[keys[0]]==2 || exist[keys[0]]==3))
                     {
+                        
                         document.getElementById('htype9').innerHTML=sum
                     }
                     for(let num in exist)
