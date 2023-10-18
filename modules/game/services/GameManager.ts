@@ -130,7 +130,7 @@ export default class GameManager
             let keys=Object.keys(tmp)
             if(keys.length==2 && (tmp[keys[0]]==2 || tmp[keys[0]]==3))
             {
-                value=sum;
+                value=25;
             }
         }
         if(type==ExportType.ThreeOfAKind)
